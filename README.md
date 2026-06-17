@@ -3,7 +3,6 @@
 # Student Information
 
 **Name:** Chiranjeevi Venkata Shiva Ruthvik Savaram
-**WSU ID:** Y247K345
 
 ## Project Overview
 
