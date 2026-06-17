@@ -43,9 +43,10 @@ v_equalized = cv2.equalizeHist(v)
 
 hsv_equalized = cv2.merge((h, s, v_equalized))
 
-# Convert the normalized HSV image back to BGR
+# Converting the normalized HSV image back to BGR
 normalized_img = cv2.cvtColor(hsv_equalized, cv2.COLOR_HSV2BGR)
 cv2.imwrite("output/07_normalized_rgb.jpg", normalized_img)
 
 print("Finished creating converted images.")
 print("Total images saved: 7")
+
