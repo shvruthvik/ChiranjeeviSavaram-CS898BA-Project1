@@ -24,3 +24,21 @@ print("Subset 1:", len(subset1))
 print("Subset 2:", len(subset2))
 print("Subset 3:", len(subset3))
 print("Subset 4:", len(subset4))
+
+# Save subsets to text files to be used in the edge detection code
+
+with open("subset1.txt", "w") as f:
+    for image in subset1:
+        f.write(image + "\n")
+
+with open("subset2.txt", "w") as f:
+    for image in subset2:
+        f.write(image + "\n")
+
+with open("subset3.txt", "w") as f:
+        for image in subset3:
+            f.write(image + "\n")
+
+with open("subset4.txt", "w") as f:
+    for image in subset4:
+        f.write(image + "\n")
