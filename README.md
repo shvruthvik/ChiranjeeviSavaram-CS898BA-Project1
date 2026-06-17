@@ -7,7 +7,7 @@
 
 ## Project Overview
 
-This is Homework 1 in CS898BA – Image Analysis and Computer Vision. The objective of this assignment was to perform image analysis and image processing using Python and OpenCV. Various image processing techniques were applied to the provided image, including image statistics, color space conversions, histogram equalization, affine transformations, Gaussian blur, and edge detection. And we also created plots for images for each technique.
+This is Homework 1 in CS898BA – Image Analysis and Computer Vision. The objective of this assignment was to perform image analysis and image processing using Python and OpenCV. Various image processing techniques were applied to the provided image, including image statistics, color space conversions, histogram equalization, affine transformations, Gaussian blur, and edge detection. And we also created Comparison plots for the edge detection results.
 
 ## Software and Libraries Used
 
@@ -121,7 +121,7 @@ Prewitt produced results similar to Sobel but generally showed weaker edge respo
 
 ## Best Performing Method
 
-Based on visual comparison of the generated outputs, Sobel provided the most useful and consistent edge detection results for this dataset. It highlighted the major object boundaries while reducing unnecessary noise. Although Canny produced cleaner edges in some cases, Sobel provided a better balance between edge visibility and detail preservation across the image set. Even though prewitt provided a similar amount of good images as Sobel, Sobel clearer and more visible images.
+Based on visual comparison of the generated outputs, Sobel provided the most useful and consistent edge detection results for this dataset. It highlighted the major object boundaries while reducing unnecessary noise. Although Canny produced cleaner edges in some cases, Sobel provided a better balance between edge visibility and detail preservation across the image set. Even though prewitt provided a similar amount of good images as Sobel, Sobel produced clearer and more visible edge images.
 
 ## Sample Comparison Plots
 
