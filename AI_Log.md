@@ -137,3 +137,101 @@
 **Response Synopsis:** Received troubleshooting assistance for environment setup, file locations, Git operations, package installation, and image generation issues.
 
 **Changes Made:** Resolved development and execution issues encountered during project implementation and successfully completed the project workflow.
+
+---
+
+## Entry 11
+
+**Date and Time:** June 27, 2026, 2:00 PM
+
+**AI Tool:** ChatGPT
+
+**Prompt:** How should I continue Homework Two using my existing Homework One repository without overwriting my previous work, and how should I organize the new segmentation files?
+
+**Response Synopsis:** Received guidance on creating a new Git branch, organizing the project structure, and planning the implementation of the segmentation tasks while keeping Homework One unchanged.
+
+**Changes Made:** Created the `Feature-Segmentation` branch, added the required project files, and organized the repository for Homework Two development.
+
+---
+
+## Entry 12
+
+**Date and Time:** June 27, 2026, 3:00 PM
+
+**AI Tool:** ChatGPT
+
+**Prompt:** How can I perform multi-channel histogram equalization on a color image using OpenCV and use the normalized image as the input for image segmentation?
+
+**Response Synopsis:** Received explanations on splitting the image into color channels, applying histogram equalization to each channel, merging the channels back together, and saving the normalized image.
+
+**Changes Made:** Implemented multi-channel color normalization and generated the normalized image for the remaining segmentation tasks.
+
+---
+
+## Entry 13
+
+**Date and Time:** June 27, 2026, 4:00 PM
+
+**AI Tool:** ChatGPT
+
+**Prompt:** How can I implement Otsu's Global Thresholding and Adaptive Gaussian Thresholding in OpenCV and save both the binary masks and segmented foreground images?
+
+**Response Synopsis:** Received guidance on implementing both thresholding techniques using OpenCV and organizing the generated masks and segmented outputs.
+
+**Changes Made:** Implemented threshold-based segmentation, generated the required binary masks, and saved the segmented foreground images.
+
+---
+
+## Entry 14
+
+**Date and Time:** June 27, 2026, 5:15 PM
+
+**AI Tool:** ChatGPT
+
+**Prompt:** How can I apply K-Means clustering in the HSV color space, compare different K values, and determine which segmentation result is most suitable?
+
+**Response Synopsis:** Received guidance on converting the normalized image to the HSV color space, implementing K-Means clustering, testing multiple K values, and comparing the segmentation results.
+
+**Changes Made:** Implemented K-Means segmentation, evaluated K values of 3, 4, and 5, and selected K = 3 for the final segmentation result.
+
+---
+
+## Entry 15
+
+**Date and Time:** June 27, 2026, 6:15 PM
+
+**AI Tool:** ChatGPT
+
+**Prompt:** How can I create a manually defined reference mask and calculate IoU and Dice Coefficient to evaluate image segmentation results?
+
+**Response Synopsis:** Received explanations on creating a pseudo-ground-truth mask, calculating IoU and Dice metrics, and comparing the performance of different segmentation methods.
+
+**Changes Made:** Created a manual reference mask, implemented IoU and Dice Coefficient calculations, and evaluated the segmentation results.
+
+---
+
+## Entry 16
+
+**Date and Time:** June 27, 2026, 7:00 PM
+
+**AI Tool:** ChatGPT
+
+**Prompt:** How can I generate a comparison figure showing the original image, normalized image, manually created reference mask, and the final segmentation results using OpenCV?
+
+**Response Synopsis:** Received guidance on arranging multiple images into a single comparison figure, adding titles, and exporting the final visualization for documentation.
+
+**Changes Made:** Generated the final segmentation comparison figure and prepared it for inclusion in the project README.
+
+---
+
+## Entry 17
+
+**Date and Time:** June 27, 2026, 8:00 PM
+
+**AI Tool:** ChatGPT
+
+**Prompt:** How can I troubleshoot Python execution errors, OpenCV image loading issues, Git commands, and update the README and AI log for Homework Two?
+
+**Response Synopsis:** Received assistance with debugging code, correcting file paths, resolving execution issues, organizing repository files, and documenting the completed work.
+
+**Changes Made:** Resolved implementation issues, updated the README and AI log, and finalized the Homework Two repository for submission.
