@@ -271,3 +271,15 @@
 **Response Synopsis:** ChatGPT provided a baseline CNN implementation using PyTorch. The model included convolutional layers, ReLU activation, max pooling, dropout, and fully connected layers. It also included training, validation, model saving, test evaluation, result logging, and plot generation.
 
 **Changes Made:** Created `src/baseline_cnn.py` and trained the model for 15 epochs using the prepared fish dataset. The model achieved 81.05% test accuracy. The best checkpoint was saved at epoch 9 based on validation loss. Training and validation accuracy and loss plots were generated, and the results were saved in JSON format.
+
+## Entry 21
+
+**Date and Time:** July 16, 2026, 9:40 PM
+
+**AI Tool:** ChatGPT (GPT-5.6 Thinking)
+
+**Prompt:** "Help me create a concise hyperparameter tuning script for the fish classification CNN. Compare learning rate, batch size, and dropout while keeping the baseline code unchanged."
+
+**Response Synopsis:** ChatGPT provided a PyTorch tuning script that trained four CNN configurations for 10 epochs each. The experiments changed one hyperparameter at a time and saved the best model, tuning results, and a comparison plot.
+
+**Changes Made:** Created `src/hyperparameter_tuning.py` and compared the baseline configuration with a lower learning rate, smaller batch size, and higher dropout. Batch size 16 achieved the highest validation accuracy of 80.92% at epoch 8. The results were saved in `tuning_results.json`, and a comparison plot was generated.
