@@ -235,3 +235,15 @@
 **Response Synopsis:** Received assistance with debugging code, correcting file paths, resolving execution issues, organizing repository files, and documenting the completed work.
 
 **Changes Made:** Resolved implementation issues, updated the README and AI log, and finalized the Homework Two repository for submission.
+
+## Entry 18
+
+**Date and Time:** July 16, 2026, 8:25 PM
+
+**AI Tool:** ChatGPT
+
+**Prompt:** "Help me prepare my repository for Homework 3 by creating a new Git branch, organizing the project folders, and configuring Git to ignore the dataset."
+
+**Response Synopsis:** Received guidance on creating the Feature-Classification branch, organizing Homework 3 folders, and using a `.gitignore` file so the dataset remains local while the repository tracks only source code and documentation.
+
+**Changes Made:** Created the Homework 3 project structure, added the `hw3_output` directories, configured `.gitignore`, and prepared the repository for implementation.
