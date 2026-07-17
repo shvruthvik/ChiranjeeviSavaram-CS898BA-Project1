@@ -238,12 +238,36 @@
 
 ## Entry 18
 
-**Date and Time:** July 16, 2026, 8:25 PM
+**Date and Time:** July 16, 2026, 7:45 PM
 
 **AI Tool:** ChatGPT
 
 **Prompt:** "Help me prepare my repository for Homework 3 by creating a new Git branch, organizing the project folders, and configuring Git to ignore the dataset."
 
-**Response Synopsis:** Received guidance on creating the Feature-Classification branch, organizing Homework 3 folders, and using a `.gitignore` file so the dataset remains local while the repository tracks only source code and documentation.
+**Response Synopsis:** Received guidance on creating the Feature-Classification branch, organizing Homework 3 folders, and configuring Git to ignore the fish dataset using a `.gitignore` file.
 
-**Changes Made:** Created the Homework 3 project structure, added the `hw3_output` directories, configured `.gitignore`, and prepared the repository for implementation.
+**Changes Made:** Created the Feature-Classification branch, set up the Homework 3 folder structure, added a `.gitignore` file to exclude the dataset from Git tracking, and prepared the repository for implementation.
+
+## Entry 19
+
+**Date and Time:** July 16, 2026, 8:10 PM
+
+**AI Tool:** ChatGPT
+
+**Prompt:** "Help me create a Python script to inspect the fish dataset, verify the images, split the dataset into training, validation, and testing sets, and save a summary for Homework 3."
+
+**Response Synopsis:** Received guidance on building a dataset preparation script that validates images, performs a reproducible stratified train/validation/test split, resizes the images, and generates a summary of the resulting dataset.
+
+**Changes Made:** Created `prepare_fish_dataset.py`, generated the dataset split, resized images to a consistent size, and saved the split summary as a JSON file for future training and evaluation.
+
+## Entry 20
+
+**Date and Time:** July 16, 2026, 9:10 PM
+
+**AI Tool:** ChatGPT (GPT-5.6 Thinking)
+
+**Prompt:** "Help me create a concise baseline CNN for Homework 3. The code should load the prepared fish dataset, train a custom CNN, save the best model, generate accuracy and loss plots, and save the results in JSON format."
+
+**Response Synopsis:** ChatGPT provided a baseline CNN implementation using PyTorch. The model included convolutional layers, ReLU activation, max pooling, dropout, and fully connected layers. It also included training, validation, model saving, test evaluation, result logging, and plot generation.
+
+**Changes Made:** Created `src/baseline_cnn.py` and trained the model for 15 epochs using the prepared fish dataset. The model achieved 81.05% test accuracy. The best checkpoint was saved at epoch 9 based on validation loss. Training and validation accuracy and loss plots were generated, and the results were saved in JSON format.
