@@ -283,3 +283,15 @@
 **Response Synopsis:** ChatGPT provided a PyTorch tuning script that trained four CNN configurations for 10 epochs each. The experiments changed one hyperparameter at a time and saved the best model, tuning results, and a comparison plot.
 
 **Changes Made:** Created `src/hyperparameter_tuning.py` and compared the baseline configuration with a lower learning rate, smaller batch size, and higher dropout. Batch size 16 achieved the highest validation accuracy of 80.92% at epoch 8. The results were saved in `tuning_results.json`, and a comparison plot was generated.
+
+## Entry 22
+
+**Date and Time:** July 18, 2026, 9:00 AM
+
+**AI Tool:** ChatGPT (GPT-5.6 Thinking)
+
+**Prompt:** "Help me evaluate the tuned CNN on the untouched test set and generate accuracy, precision, recall, F1-score, a classification report, and a confusion matrix."
+
+**Response Synopsis:** ChatGPT provided a PyTorch evaluation script that loaded the best tuned CNN model, evaluated it on the test dataset, calculated overall and per-class metrics, and saved the evaluation results and confusion matrix.
+
+**Changes Made:** Created `src/evaluate_tuned_cnn.py`. The tuned CNN achieved 77.12% test accuracy, 73.92% macro precision, 74.39% macro recall, and 73.52% macro F1-score on 153 test images. The evaluation results were saved in `tuned_cnn_evaluation.json`, and the confusion matrix was saved as `tuned_cnn_confusion_matrix.png`.
