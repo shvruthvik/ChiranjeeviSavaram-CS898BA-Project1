@@ -268,9 +268,9 @@
 
 **Prompt:** "Help me create a concise baseline CNN for Homework 3. The code should load the prepared fish dataset, train a custom CNN, save the best model, generate accuracy and loss plots, and save the results in JSON format."
 
-**Response Synopsis:** ChatGPT provided a baseline CNN implementation using PyTorch. The model included convolutional layers, ReLU activation, max pooling, dropout, and fully connected layers. It also included training, validation, model saving, test evaluation, result logging, and plot generation.
+**Response Synopsis:** ChatGPT provided a baseline CNN implementation using PyTorch. The model included convolutional layers, ReLU activation, max pooling, dropout, and fully connected layers. It also included training, validation, model saving, result logging, and plot generation.
 
-**Changes Made:** Created `src/baseline_cnn.py` and trained the model for 15 epochs using the prepared fish dataset. The model achieved 81.05% test accuracy. The best checkpoint was saved at epoch 9 based on validation loss. Training and validation accuracy and loss plots were generated, and the results were saved in JSON format.
+**Changes Made:** Created `src/baseline_cnn.py` and trained the baseline CNN using the prepared fish dataset. The best model checkpoint was saved based on validation performance. Training and validation accuracy and loss plots were generated, and the evaluation results were saved in JSON format for later comparison with the tuned CNN.
 
 ## Entry 21
 
@@ -295,3 +295,15 @@
 **Response Synopsis:** ChatGPT provided a PyTorch evaluation script that loaded the best tuned CNN model, evaluated it on the test dataset, calculated overall and per-class metrics, and saved the evaluation results and confusion matrix.
 
 **Changes Made:** Created `src/evaluate_tuned_cnn.py`. The tuned CNN achieved 77.12% test accuracy, 73.92% macro precision, 74.39% macro recall, and 73.52% macro F1-score on 153 test images. The evaluation results were saved in `tuned_cnn_evaluation.json`, and the confusion matrix was saved as `tuned_cnn_confusion_matrix.png`.
+
+## Entry 23
+
+**Date and Time:** July 18, 2026, 11:00 AM
+
+**AI Tool:** ChatGPT (GPT-5.6 Thinking)
+
+**Prompt:** "Review my Homework 3 repository and AI log to make sure the project is ready for submission and that the documentation matches the completed implementation."
+
+**Response Synopsis:** ChatGPT reviewed the project structure, implementation, Git history, AI log, and generated outputs to verify that all Homework 3 requirements had been completed and that the documentation was consistent with the final repository.
+
+**Changes Made:** Reviewed the repository, updated documentation where necessary, improved code comments for readability, and completed the final submission preparation.
