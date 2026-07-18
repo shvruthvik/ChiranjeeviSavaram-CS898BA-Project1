@@ -235,3 +235,75 @@
 **Response Synopsis:** Received assistance with debugging code, correcting file paths, resolving execution issues, organizing repository files, and documenting the completed work.
 
 **Changes Made:** Resolved implementation issues, updated the README and AI log, and finalized the Homework Two repository for submission.
+
+## Entry 18
+
+**Date and Time:** July 16, 2026, 7:45 PM
+
+**AI Tool:** ChatGPT
+
+**Prompt:** "Help me prepare my repository for Homework 3 by creating a new Git branch, organizing the project folders, and configuring Git to ignore the dataset."
+
+**Response Synopsis:** Received guidance on creating the Feature-Classification branch, organizing Homework 3 folders, and configuring Git to ignore the fish dataset using a `.gitignore` file.
+
+**Changes Made:** Created the Feature-Classification branch, set up the Homework 3 folder structure, added a `.gitignore` file to exclude the dataset from Git tracking, and prepared the repository for implementation.
+
+## Entry 19
+
+**Date and Time:** July 16, 2026, 8:10 PM
+
+**AI Tool:** ChatGPT
+
+**Prompt:** "Help me create a Python script to inspect the fish dataset, verify the images, split the dataset into training, validation, and testing sets, and save a summary for Homework 3."
+
+**Response Synopsis:** Received guidance on building a dataset preparation script that validates images, performs a reproducible stratified train/validation/test split, resizes the images, and generates a summary of the resulting dataset.
+
+**Changes Made:** Created `prepare_fish_dataset.py`, generated the dataset split, resized images to a consistent size, and saved the split summary as a JSON file for future training and evaluation.
+
+## Entry 20
+
+**Date and Time:** July 16, 2026, 9:10 PM
+
+**AI Tool:** ChatGPT (GPT-5.6 Thinking)
+
+**Prompt:** "Help me create a concise baseline CNN for Homework 3. The code should load the prepared fish dataset, train a custom CNN, save the best model, generate accuracy and loss plots, and save the results in JSON format."
+
+**Response Synopsis:** ChatGPT provided a baseline CNN implementation using PyTorch. The model included convolutional layers, ReLU activation, max pooling, dropout, and fully connected layers. It also included training, validation, model saving, result logging, and plot generation.
+
+**Changes Made:** Created `src/baseline_cnn.py` and trained the baseline CNN using the prepared fish dataset. The best model checkpoint was saved based on validation performance. Training and validation accuracy and loss plots were generated, and the evaluation results were saved in JSON format for later comparison with the tuned CNN.
+
+## Entry 21
+
+**Date and Time:** July 16, 2026, 9:40 PM
+
+**AI Tool:** ChatGPT (GPT-5.6 Thinking)
+
+**Prompt:** "Help me create a concise hyperparameter tuning script for the fish classification CNN. Compare learning rate, batch size, and dropout while keeping the baseline code unchanged."
+
+**Response Synopsis:** ChatGPT provided a PyTorch tuning script that trained four CNN configurations for 10 epochs each. The experiments changed one hyperparameter at a time and saved the best model, tuning results, and a comparison plot.
+
+**Changes Made:** Created `src/hyperparameter_tuning.py` and compared the baseline configuration with a lower learning rate, smaller batch size, and higher dropout. Batch size 16 achieved the highest validation accuracy of 80.92% at epoch 8. The results were saved in `tuning_results.json`, and a comparison plot was generated.
+
+## Entry 22
+
+**Date and Time:** July 18, 2026, 9:00 AM
+
+**AI Tool:** ChatGPT (GPT-5.6 Thinking)
+
+**Prompt:** "Help me evaluate the tuned CNN on the untouched test set and generate accuracy, precision, recall, F1-score, a classification report, and a confusion matrix."
+
+**Response Synopsis:** ChatGPT provided a PyTorch evaluation script that loaded the best tuned CNN model, evaluated it on the test dataset, calculated overall and per-class metrics, and saved the evaluation results and confusion matrix.
+
+**Changes Made:** Created `src/evaluate_tuned_cnn.py`. The tuned CNN achieved 77.12% test accuracy, 73.92% macro precision, 74.39% macro recall, and 73.52% macro F1-score on 153 test images. The evaluation results were saved in `tuned_cnn_evaluation.json`, and the confusion matrix was saved as `tuned_cnn_confusion_matrix.png`.
+
+## Entry 23
+
+**Date and Time:** July 18, 2026, 11:00 AM
+
+**AI Tool:** ChatGPT (GPT-5.6 Thinking)
+
+**Prompt:** "Review my Homework 3 repository and AI log to make sure the project is ready for submission and that the documentation matches the completed implementation."
+
+**Response Synopsis:** ChatGPT reviewed the project structure, implementation, Git history, AI log, and generated outputs to verify that all Homework 3 requirements had been completed and that the documentation was consistent with the final repository.
+
+**Changes Made:** Reviewed the repository, updated documentation where necessary, improved code comments for readability, and completed the final submission preparation.

@@ -1,0 +1,14 @@
+# Homework 3 dataset
+data/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments
+venv/
+.venv/
+
+# Trained models
+hw3_output/models/*.pth
+hw3_output/models/*.pt

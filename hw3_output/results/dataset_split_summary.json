@@ -1,0 +1,43 @@
+{
+    "random_seed": 42,
+    "image_size": [
+        128,
+        128
+    ],
+    "total_valid_images": 1016,
+    "classes": [
+        "Bete",
+        "Cray",
+        "Discuss",
+        "Gold",
+        "Guppy",
+        "Oscar"
+    ],
+    "skipped_files": [],
+    "split_counts": {
+        "train": {
+            "Cray": 56,
+            "Discuss": 141,
+            "Gold": 145,
+            "Oscar": 101,
+            "Bete": 136,
+            "Guppy": 132
+        },
+        "validation": {
+            "Guppy": 28,
+            "Gold": 31,
+            "Discuss": 30,
+            "Cray": 12,
+            "Bete": 29,
+            "Oscar": 22
+        },
+        "test": {
+            "Discuss": 30,
+            "Gold": 31,
+            "Oscar": 22,
+            "Guppy": 29,
+            "Cray": 12,
+            "Bete": 29
+        }
+    }
+}

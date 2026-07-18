@@ -1,0 +1,122 @@
+{
+    "model": "Tuned CNN",
+    "selected_hyperparameters": {
+        "learning_rate": 0.001,
+        "batch_size": 16,
+        "dropout": 0.3
+    },
+    "test_images": 153,
+    "classes": [
+        "Bete",
+        "Cray",
+        "Discuss",
+        "Gold",
+        "Guppy",
+        "Oscar"
+    ],
+    "accuracy": 0.7712418300653595,
+    "precision_macro": 0.7392015392015393,
+    "recall_macro": 0.7438528780575498,
+    "f1_macro": 0.7352334194380914,
+    "confusion_matrix": [
+        [
+            24,
+            1,
+            1,
+            0,
+            0,
+            3
+        ],
+        [
+            0,
+            8,
+            0,
+            0,
+            4,
+            0
+        ],
+        [
+            2,
+            0,
+            27,
+            1,
+            0,
+            0
+        ],
+        [
+            0,
+            2,
+            0,
+            24,
+            2,
+            3
+        ],
+        [
+            1,
+            0,
+            0,
+            0,
+            27,
+            1
+        ],
+        [
+            6,
+            3,
+            0,
+            2,
+            3,
+            8
+        ]
+    ],
+    "classification_report": {
+        "Bete": {
+            "precision": 0.7272727272727273,
+            "recall": 0.8275862068965517,
+            "f1-score": 0.7741935483870968,
+            "support": 29.0
+        },
+        "Cray": {
+            "precision": 0.5714285714285714,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.6153846153846154,
+            "support": 12.0
+        },
+        "Discuss": {
+            "precision": 0.9642857142857143,
+            "recall": 0.9,
+            "f1-score": 0.9310344827586207,
+            "support": 30.0
+        },
+        "Gold": {
+            "precision": 0.8888888888888888,
+            "recall": 0.7741935483870968,
+            "f1-score": 0.8275862068965517,
+            "support": 31.0
+        },
+        "Guppy": {
+            "precision": 0.75,
+            "recall": 0.9310344827586207,
+            "f1-score": 0.8307692307692308,
+            "support": 29.0
+        },
+        "Oscar": {
+            "precision": 0.5333333333333333,
+            "recall": 0.36363636363636365,
+            "f1-score": 0.43243243243243246,
+            "support": 22.0
+        },
+        "accuracy": 0.7712418300653595,
+        "macro avg": {
+            "precision": 0.7392015392015393,
+            "recall": 0.7438528780575498,
+            "f1-score": 0.7352334194380914,
+            "support": 153.0
+        },
+        "weighted avg": {
+            "precision": 0.770689622650407,
+            "recall": 0.7712418300653595,
+            "f1-score": 0.7648905646419224,
+            "support": 153.0
+        }
+    }
+}

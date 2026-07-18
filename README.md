@@ -6,11 +6,13 @@
 
 ## Project Overview
 
-This repository contains Homework 1 and Homework 2 for CS898BA – Image Analysis and Computer Vision. Throughout these assignments, I implemented several classical image processing and segmentation techniques using Python and OpenCV.
+This repository contains Homework 1, Homework 2, and Homework 3 for CS898BA – Image Analysis and Computer Vision. Throughout these assignments, I implemented several classical image processing, image segmentation, and deep learning techniques using Python, OpenCV, and PyTorch.
 
 Homework 1 focused on image analysis, preprocessing, affine transformations, Gaussian blurring, image subsets, and edge detection.
 
 Homework 2 extended the same assignment by implementing image segmentation techniques including multi-channel color normalization, threshold-based segmentation, K-Means clustering, and quantitative evaluation using IoU and Dice Coefficient.
+
+Homework 3 further extended the project by implementing deep learning–based image classification using a custom Convolutional Neural Network (CNN). The assignment included dataset preparation, CNN training, hyperparameter tuning, and model evaluation using Accuracy, Precision, Recall, F1-score, and a confusion matrix.
 
 ## Software and Libraries Used
 
@@ -18,6 +20,10 @@ Homework 2 extended the same assignment by implementing image segmentation techn
 * OpenCV
 * NumPy
 * SciPy
+* Matplotlib
+* PyTorch
+* Torchvision
+* Scikit-learn
 
 ## How to Run the Program
 
@@ -48,6 +54,16 @@ python src/color_normalization.py
 python src/threshold_segmentation.py
 python src/kmeans_segmentation.py
 python src/evaluate_segmentation.py
+```
+7. Download the Homework 3 fish image dataset and place it inside the project directory as described in the project structure.
+
+8. Run the Homework 3 scripts in the following order:
+
+```bash
+python src/prepare_fish_dataset.py
+python src/baseline_cnn.py
+python src/hyperparameter_tuning.py
+python src/evaluate_tuned_cnn.py
 ```
 
 # Homework 1
@@ -288,12 +304,114 @@ The following figure compares the original image, normalized image, manually cre
 
 ![Final Segmentation Comparison](hw2_output/final_segmentation_comparison.jpg)
 
+# Homework 3
+
+## Tasks Completed
+
+The following deep learning image classification tasks were completed as part of Homework 3:
+
+* Verified the fish image dataset and removed invalid images
+* Split the dataset into training, validation, and testing sets
+* Resized all images to a consistent input size
+* Implemented a custom Convolutional Neural Network (CNN) using PyTorch
+* Trained a baseline CNN model
+* Saved the best model checkpoint based on validation performance
+* Generated training and validation accuracy and loss plots
+* Performed hyperparameter tuning using different learning rates, batch sizes, and dropout values
+* Selected the best-performing hyperparameter configuration
+* Evaluated the tuned CNN on the unseen test dataset
+* Generated a confusion matrix and classification report
+* Calculated Accuracy, Precision, Recall, and F1-score
+
+## Results
+
+Homework 3 successfully trained and evaluated a custom CNN for fish image classification. The project included dataset preparation, baseline model training, hyperparameter tuning, and final evaluation on an unseen test dataset. Performance was assessed using Accuracy, Precision, Recall, F1-score, and a confusion matrix.
+
+The project also generated training and validation accuracy/loss plots, hyperparameter tuning comparison plots, saved model checkpoints, evaluation metrics in JSON format, and confusion matrices. These outputs were used to compare different CNN configurations and document the final model's performance.
+
+## Dataset Preparation
+
+Before training the CNN, the fish image dataset was verified to ensure that all images were valid and could be processed correctly. The images were resized to a consistent resolution and divided into training, validation, and testing subsets using a reproducible random seed.
+
+This preprocessing step ensured that all experiments were performed on a consistent dataset and that the trained models could be evaluated fairly on unseen data.
+
+## Baseline CNN
+
+A custom Convolutional Neural Network (CNN) was implemented using PyTorch for image classification.
+
+The network consisted of convolutional layers, ReLU activation functions, max pooling layers, dropout regularization, and fully connected layers for classification.
+
+The baseline model was trained using the prepared dataset, and the best-performing model was automatically saved according to validation performance. Training and validation accuracy and loss plots were generated to monitor the learning process.
+
+## Training Curves
+
+The following figures show the training accuracy and training loss of the baseline CNN during model training.
+
+### Training Accuracy
+
+![Baseline CNN Accuracy](hw3_output/plots/baseline_accuracy.png)
+
+### Training Loss
+
+![Baseline CNN Loss](hw3_output/plots/baseline_loss.png)
+
+## Hyperparameter Tuning
+
+Four different CNN configurations were evaluated by modifying one hyperparameter at a time.
+
+The following parameters were compared:
+
+* Baseline configuration
+* Lower learning rate
+* Smaller batch size
+* Higher dropout rate
+
+Among the four experiments, the configuration using a **batch size of 16** produced the highest validation accuracy and was selected for the final evaluation.
+
+## Hyperparameter Comparison
+
+The following figure compares the validation performance of the different hyperparameter configurations evaluated during Homework 3.
+
+![Hyperparameter Comparison](hw3_output/plots/hyperparameter_comparison.png)
+
+## Final Evaluation
+
+The selected CNN model was evaluated on the unseen test dataset.
+
+The following performance metrics were calculated.
+
+| Metric | Value |
+|---------|-------:|
+| Accuracy | **77.12%** |
+| Precision | **73.92%** |
+| Recall | **74.39%** |
+| F1-score | **73.52%** |
+
+A confusion matrix and a detailed classification report were also generated to evaluate the prediction performance for each fish species.
+
+## Confusion Matrix
+
+The following confusion matrix summarizes the prediction performance of the final tuned CNN on the test dataset.
+
+![Tuned CNN Confusion Matrix](hw3_output/plots/tuned_cnn_confusion_matrix.png)
+
+## Model Performance Analysis
+
+The CNN successfully learned meaningful visual features from the fish image dataset and achieved good overall classification performance.
+
+Hyperparameter tuning showed that reducing the batch size from 32 to 16 slightly improved validation performance, while decreasing the learning rate or increasing the dropout rate did not improve the final model.
+
+Although some visually similar fish species were occasionally misclassified, the CNN demonstrated that deep learning methods can effectively perform multi-class image classification without manually designing image features.
+
 ## Overall Conclusion
 
-This repository demonstrates the implementation of several classical image processing and computer vision techniques using Python and OpenCV.
+This repository demonstrates the implementation of several classical image processing, computer vision, and deep learning techniques using Python, OpenCV, and PyTorch.
 
 In Homework 1, the focus was on image preprocessing, image enhancement, affine transformations, Gaussian blurring, and edge detection. Different edge detection methods were compared to understand how each technique responds to the same image dataset. Based on the visual results, Sobel provided the most consistent edge detection performance by preserving important object boundaries while reducing unnecessary noise.
 
 Homework 2 extended the project by applying image segmentation techniques. Multi-channel color normalization improved the image contrast before segmentation, while Otsu's Thresholding, Adaptive Thresholding, and K-Means clustering were implemented and evaluated. Both qualitative observations and quantitative metrics (IoU and Dice Coefficient) were used to compare the segmentation methods. Among the three techniques, K-Means with **K = 3** produced the best overall segmentation result for this dataset.
 
-Overall, these assignments provided practical experience with image preprocessing, feature extraction, edge detection, image segmentation, and performance evaluation. They also demonstrated how different computer vision techniques can be combined to solve a complete image analysis problem.
+Homework 3 further extended the project by introducing deep learning–based image classification. A custom Convolutional Neural Network (CNN) was developed using PyTorch, trained on a prepared fish image dataset, and improved through hyperparameter tuning. The final model was evaluated using Accuracy, Precision, Recall, F1-score, a confusion matrix, and a classification report to measure its performance on unseen test data.
+
+Overall, these assignments provided practical experience with image preprocessing, feature extraction, edge detection, image segmentation, deep learning, and quantitative performance evaluation. Together, they demonstrate how classical computer vision techniques and modern deep learning methods can be combined to solve real-world image analysis and image classification problems.
+
