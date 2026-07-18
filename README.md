@@ -12,7 +12,7 @@ Homework 1 focused on image analysis, preprocessing, affine transformations, Gau
 
 Homework 2 extended the same assignment by implementing image segmentation techniques including multi-channel color normalization, threshold-based segmentation, K-Means clustering, and quantitative evaluation using IoU and Dice Coefficient.
 
-Homework 3 further extended the project by implementing deep learning–based image classification using a custom Convolutional Neural Network (CNN). The assignment included dataset preparation, CNN training, hyperparameter tuning, and model evaluation using Accuracy, Precision, Recall, F1-score, and a confusion matrix.
+Homework 3 further extended the project by implementing deep learning–based image classification using a custom Convolutional Neural Network (CNN). The assignment included dataset preparation, CNN training, systematic hyperparameter tuning, baseline versus optimized model comparison, and evaluation using Accuracy, Precision, Recall, F1-score, classification reports, and confusion matrices.
 
 ## Software and Libraries Used
 
@@ -331,9 +331,18 @@ The project also generated training and validation accuracy/loss plots, hyperpar
 
 ## Dataset Preparation
 
-Before training the CNN, the fish image dataset was verified to ensure that all images were valid and could be processed correctly. The images were resized to a consistent resolution and divided into training, validation, and testing subsets using a reproducible random seed.
+Before training the CNN, the fish image dataset was verified to ensure that all images were valid and could be processed correctly. The final dataset contained **711 training images**, **152 validation images**, and **153 testing images** across six fish classes.
 
-This preprocessing step ensured that all experiments were performed on a consistent dataset and that the trained models could be evaluated fairly on unseen data.
+All images were resized to **128 × 128 pixels**. The images were converted to tensors and normalized using a mean and standard deviation of **0.5** for each RGB channel, scaling the input values approximately to the range **[-1, 1]**.
+
+To improve model generalization, data augmentation was applied only to the training dataset. The augmentation pipeline included:
+
+* Random horizontal flipping
+* Random rotation (10°)
+* Random brightness adjustment
+* Random contrast adjustment
+
+Validation and testing images were resized and normalized without random augmentation to ensure fair evaluation.
 
 ## Baseline CNN
 
@@ -357,16 +366,19 @@ The following figures show the training accuracy and training loss of the baseli
 
 ## Hyperparameter Tuning
 
-Four different CNN configurations were evaluated by modifying one hyperparameter at a time.
+Five CNN configurations were evaluated by modifying one hyperparameter at a time while keeping the remaining parameters unchanged.
 
-The following parameters were compared:
+The following experiments were performed:
 
-* Baseline configuration
-* Lower learning rate
-* Smaller batch size
-* Higher dropout rate
+| Experiment | Learning Rate | Batch Size | Dropout | Best Validation Accuracy |
+|------------|--------------:|-----------:|---------:|-------------------------:|
+| Baseline | 0.001 | 32 | 0.30 | 78.29% |
+| Learning Rate 0.0005 | 0.0005 | 32 | 0.30 | 77.63% |
+| Learning Rate 0.0001 | 0.0001 | 32 | 0.30 | 67.76% |
+| Batch Size 16 | 0.001 | 16 | 0.30 | **81.58%** |
+| Dropout 0.50 | 0.001 | 32 | 0.50 | 75.00% |
 
-Among the four experiments, the configuration using a **batch size of 16** produced the highest validation accuracy and was selected for the final evaluation.
+Among all experiments, reducing the batch size from **32** to **16** produced the highest validation accuracy of **81.58%** and was selected as the final model configuration. Lower learning rates and higher dropout values did not improve the model's performance.
 
 ## Hyperparameter Comparison
 
@@ -374,34 +386,68 @@ The following figure compares the validation performance of the different hyperp
 
 ![Hyperparameter Comparison](hw3_output/plots/hyperparameter_comparison.png)
 
+The comparison shows that reducing the batch size from 32 to 16 produced the highest validation accuracy, while lowering the learning rate or increasing the dropout rate resulted in lower performance.
+
 ## Final Evaluation
 
-The selected CNN model was evaluated on the unseen test dataset.
+Both the baseline CNN and the optimized CNN were evaluated on the unseen test dataset. Accuracy, Precision, Recall, and F1-score were calculated along with a complete classification report and confusion matrices.
 
-The following performance metrics were calculated.
+### Baseline vs Optimized CNN
 
-| Metric | Value |
-|---------|-------:|
-| Accuracy | **77.12%** |
-| Precision | **73.92%** |
-| Recall | **74.39%** |
-| F1-score | **73.52%** |
+| Model | Accuracy | Precision | Recall | F1-score |
+|-------|----------:|----------:|--------:|----------:|
+| Baseline CNN | 80.39% | 78.02% | 76.55% | 76.35% |
+| Tuned CNN | **85.62%** | **83.59%** | **83.99%** | **82.83%** |
 
-A confusion matrix and a detailed classification report were also generated to evaluate the prediction performance for each fish species.
+The optimized CNN improved the overall test accuracy by **5.23 percentage points** compared to the baseline CNN.
 
-## Confusion Matrix
+The best-performing hyperparameter configuration was:
 
-The following confusion matrix summarizes the prediction performance of the final tuned CNN on the test dataset.
+* Learning rate = **0.001**
+* Batch size = **16**
+* Dropout = **0.30**
+
+### Baseline vs Tuned Metrics
+
+![Baseline vs Tuned Metrics](hw3_output/plots/baseline_vs_tuned_metrics.png)
+
+### Baseline Accuracy Curve
+
+![Baseline Accuracy](hw3_output/plots/baseline_accuracy.png)
+
+### Baseline Loss Curve
+
+![Baseline Loss](hw3_output/plots/baseline_loss.png)
+
+### Baseline vs Tuned Accuracy Curves
+
+![Accuracy Curves](hw3_output/plots/baseline_vs_tuned_accuracy_curves.png)
+
+### Baseline vs Tuned Loss Curves
+
+![Loss Curves](hw3_output/plots/baseline_vs_tuned_loss_curves.png)
+
+### Baseline CNN Confusion Matrix
+
+![Baseline CNN Confusion Matrix](hw3_output/plots/baseline_cnn_confusion_matrix.png)
+
+### Tuned CNN Confusion Matrix
 
 ![Tuned CNN Confusion Matrix](hw3_output/plots/tuned_cnn_confusion_matrix.png)
 
 ## Model Performance Analysis
 
-The CNN successfully learned meaningful visual features from the fish image dataset and achieved good overall classification performance.
+The custom CNN successfully learned discriminative visual features for classifying six fish species.
 
-Hyperparameter tuning showed that reducing the batch size from 32 to 16 slightly improved validation performance, while decreasing the learning rate or increasing the dropout rate did not improve the final model.
+Hyperparameter tuning demonstrated that reducing the batch size from **32** to **16** improved both validation and test performance. Lower learning rates (0.0005 and 0.0001) did not improve classification accuracy, while increasing the dropout rate to **0.50** also reduced performance.
 
-Although some visually similar fish species were occasionally misclassified, the CNN demonstrated that deep learning methods can effectively perform multi-class image classification without manually designing image features.
+The optimized CNN achieved **85.62%** test accuracy compared to **80.39%** for the baseline CNN. Precision, Recall, and F1-score also improved after tuning, indicating better overall generalization to unseen images.
+
+Among the six fish classes, **Discuss** and **Gold** achieved the strongest classification performance. The **Oscar** class remained the most challenging due to visual similarity with other classes, although its recall improved compared with the baseline model.
+
+Overall, the experiments demonstrated that careful hyperparameter tuning significantly improved the CNN without changing the network architecture.
+
+The data augmentation techniques applied to the training dataset increased the diversity of the training images and helped the model learn more robust visual features. Training and validation accuracy improved consistently throughout training without showing obvious signs of unstable learning, suggesting that the augmentation strategy supported model generalization on the relatively small dataset.
 
 ## Overall Conclusion
 
@@ -411,7 +457,7 @@ In Homework 1, the focus was on image preprocessing, image enhancement, affine t
 
 Homework 2 extended the project by applying image segmentation techniques. Multi-channel color normalization improved the image contrast before segmentation, while Otsu's Thresholding, Adaptive Thresholding, and K-Means clustering were implemented and evaluated. Both qualitative observations and quantitative metrics (IoU and Dice Coefficient) were used to compare the segmentation methods. Among the three techniques, K-Means with **K = 3** produced the best overall segmentation result for this dataset.
 
-Homework 3 further extended the project by introducing deep learning–based image classification. A custom Convolutional Neural Network (CNN) was developed using PyTorch, trained on a prepared fish image dataset, and improved through hyperparameter tuning. The final model was evaluated using Accuracy, Precision, Recall, F1-score, a confusion matrix, and a classification report to measure its performance on unseen test data.
+Homework 3 further extended the project by introducing deep learning–based image classification. A custom Convolutional Neural Network (CNN) was developed using PyTorch, trained on a prepared fish image dataset, and optimized through hyperparameter tuning. The final tuned CNN achieved **85.62%** test accuracy and outperformed the baseline CNN by **5.23 percentage points**, demonstrating the effectiveness of controlled hyperparameter tuning for improving image classification performance.
 
 Overall, these assignments provided practical experience with image preprocessing, feature extraction, edge detection, image segmentation, deep learning, and quantitative performance evaluation. Together, they demonstrate how classical computer vision techniques and modern deep learning methods can be combined to solve real-world image analysis and image classification problems.
 

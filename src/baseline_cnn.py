@@ -17,6 +17,8 @@ IMAGE_SIZE = 128
 BATCH_SIZE = 32
 EPOCHS = 15
 LEARNING_RATE = 0.001
+NORMALIZE_MEAN = [0.5, 0.5, 0.5]
+NORMALIZE_STD = [0.5, 0.5, 0.5]
 
 
 # Keep the results reproducible
@@ -43,12 +45,14 @@ train_transform = transforms.Compose([
     transforms.RandomHorizontalFlip(),
     transforms.RandomRotation(10),
     transforms.ColorJitter(brightness=0.15, contrast=0.15),
-    transforms.ToTensor()
+    transforms.ToTensor(),
+    transforms.Normalize(mean=NORMALIZE_MEAN, std=NORMALIZE_STD)
 ])
 
 test_transform = transforms.Compose([
     transforms.Resize((IMAGE_SIZE, IMAGE_SIZE)),
-    transforms.ToTensor()
+    transforms.ToTensor(),
+    transforms.Normalize(mean=NORMALIZE_MEAN, std=NORMALIZE_STD)
 ])
 
 

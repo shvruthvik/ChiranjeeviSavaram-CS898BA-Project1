@@ -1,0 +1,247 @@
+{
+    "test_images": 153,
+    "classes": [
+        "Bete",
+        "Cray",
+        "Discuss",
+        "Gold",
+        "Guppy",
+        "Oscar"
+    ],
+    "normalization": {
+        "mean": [
+            0.5,
+            0.5,
+            0.5
+        ],
+        "std": [
+            0.5,
+            0.5,
+            0.5
+        ]
+    },
+    "baseline_model": {
+        "selected_hyperparameters": {
+            "learning_rate": 0.001,
+            "batch_size": 32,
+            "dropout": 0.3
+        },
+        "accuracy": 0.803921568627451,
+        "precision_macro": 0.7801681376065926,
+        "recall_macro": 0.7655338142268064,
+        "f1_macro": 0.7635009064255723,
+        "confusion_matrix": [
+            [
+                26,
+                0,
+                0,
+                1,
+                0,
+                2
+            ],
+            [
+                0,
+                7,
+                0,
+                0,
+                5,
+                0
+            ],
+            [
+                0,
+                0,
+                27,
+                2,
+                0,
+                1
+            ],
+            [
+                1,
+                1,
+                0,
+                26,
+                2,
+                1
+            ],
+            [
+                1,
+                0,
+                0,
+                0,
+                28,
+                0
+            ],
+            [
+                4,
+                3,
+                1,
+                2,
+                3,
+                9
+            ]
+        ],
+        "classification_report": {
+            "Bete": {
+                "precision": 0.8125,
+                "recall": 0.896551724137931,
+                "f1-score": 0.8524590163934426,
+                "support": 29.0
+            },
+            "Cray": {
+                "precision": 0.6363636363636364,
+                "recall": 0.5833333333333334,
+                "f1-score": 0.6086956521739131,
+                "support": 12.0
+            },
+            "Discuss": {
+                "precision": 0.9642857142857143,
+                "recall": 0.9,
+                "f1-score": 0.9310344827586207,
+                "support": 30.0
+            },
+            "Gold": {
+                "precision": 0.8387096774193549,
+                "recall": 0.8387096774193549,
+                "f1-score": 0.8387096774193549,
+                "support": 31.0
+            },
+            "Guppy": {
+                "precision": 0.7368421052631579,
+                "recall": 0.9655172413793104,
+                "f1-score": 0.835820895522388,
+                "support": 29.0
+            },
+            "Oscar": {
+                "precision": 0.6923076923076923,
+                "recall": 0.4090909090909091,
+                "f1-score": 0.5142857142857142,
+                "support": 22.0
+            },
+            "accuracy": 0.803921568627451,
+            "macro avg": {
+                "precision": 0.7801681376065926,
+                "recall": 0.7655338142268064,
+                "f1-score": 0.7635009064255723,
+                "support": 153.0
+            },
+            "weighted avg": {
+                "precision": 0.8021348061982737,
+                "recall": 0.803921568627451,
+                "f1-score": 0.7941816043705253,
+                "support": 153.0
+            }
+        }
+    },
+    "tuned_model": {
+        "selected_hyperparameters": {
+            "learning_rate": 0.001,
+            "batch_size": 16,
+            "dropout": 0.3
+        },
+        "accuracy": 0.8562091503267973,
+        "precision_macro": 0.8358704368844311,
+        "recall_macro": 0.8399265176795767,
+        "f1_macro": 0.8283136158340705,
+        "confusion_matrix": [
+            [
+                24,
+                2,
+                1,
+                0,
+                1,
+                1
+            ],
+            [
+                0,
+                10,
+                0,
+                0,
+                2,
+                0
+            ],
+            [
+                1,
+                0,
+                29,
+                0,
+                0,
+                0
+            ],
+            [
+                0,
+                0,
+                0,
+                29,
+                1,
+                1
+            ],
+            [
+                2,
+                0,
+                0,
+                0,
+                27,
+                0
+            ],
+            [
+                1,
+                5,
+                1,
+                3,
+                0,
+                12
+            ]
+        ],
+        "classification_report": {
+            "Bete": {
+                "precision": 0.8571428571428571,
+                "recall": 0.8275862068965517,
+                "f1-score": 0.8421052631578947,
+                "support": 29.0
+            },
+            "Cray": {
+                "precision": 0.5882352941176471,
+                "recall": 0.8333333333333334,
+                "f1-score": 0.6896551724137931,
+                "support": 12.0
+            },
+            "Discuss": {
+                "precision": 0.9354838709677419,
+                "recall": 0.9666666666666667,
+                "f1-score": 0.9508196721311475,
+                "support": 30.0
+            },
+            "Gold": {
+                "precision": 0.90625,
+                "recall": 0.9354838709677419,
+                "f1-score": 0.9206349206349206,
+                "support": 31.0
+            },
+            "Guppy": {
+                "precision": 0.8709677419354839,
+                "recall": 0.9310344827586207,
+                "f1-score": 0.9,
+                "support": 29.0
+            },
+            "Oscar": {
+                "precision": 0.8571428571428571,
+                "recall": 0.5454545454545454,
+                "f1-score": 0.6666666666666666,
+                "support": 22.0
+            },
+            "accuracy": 0.8562091503267973,
+            "macro avg": {
+                "precision": 0.8358704368844311,
+                "recall": 0.8399265176795767,
+                "f1-score": 0.8283136158340705,
+                "support": 153.0
+            },
+            "weighted avg": {
+                "precision": 0.8639832672474429,
+                "recall": 0.8562091503267973,
+                "f1-score": 0.8531232292210986,
+                "support": 153.0
+            }
+        }
+    }
+}
