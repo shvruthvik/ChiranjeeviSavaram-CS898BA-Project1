@@ -16,6 +16,8 @@ from torchvision import datasets, transforms
 SEED = 42
 IMAGE_SIZE = 128
 EPOCHS = 10
+NORMALIZE_MEAN = [0.5, 0.5, 0.5]
+NORMALIZE_STD = [0.5, 0.5, 0.5]
 
 
 # Project folders
@@ -36,12 +38,14 @@ train_transform = transforms.Compose([
     transforms.RandomHorizontalFlip(),
     transforms.RandomRotation(10),
     transforms.ColorJitter(brightness=0.15, contrast=0.15),
-    transforms.ToTensor()
+    transforms.ToTensor(),
+    transforms.Normalize(mean=NORMALIZE_MEAN, std=NORMALIZE_STD)
 ])
 
 validation_transform = transforms.Compose([
     transforms.Resize((IMAGE_SIZE, IMAGE_SIZE)),
-    transforms.ToTensor()
+    transforms.ToTensor(),
+    transforms.Normalize(mean=NORMALIZE_MEAN, std=NORMALIZE_STD)
 ])
 
 
@@ -153,6 +157,12 @@ experiments = [
     {
         "name": "Learning Rate 0.0005",
         "learning_rate": 0.0005,
+        "batch_size": 32,
+        "dropout": 0.30
+    },
+    {
+        "name": "Learning Rate 0.0001",
+        "learning_rate": 0.0001,
         "batch_size": 32,
         "dropout": 0.30
     },

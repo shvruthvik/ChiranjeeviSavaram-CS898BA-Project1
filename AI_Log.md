@@ -280,9 +280,9 @@
 
 **Prompt:** "Help me create a concise hyperparameter tuning script for the fish classification CNN. Compare learning rate, batch size, and dropout while keeping the baseline code unchanged."
 
-**Response Synopsis:** ChatGPT provided a PyTorch tuning script that trained four CNN configurations for 10 epochs each. The experiments changed one hyperparameter at a time and saved the best model, tuning results, and a comparison plot.
+**Response Synopsis:** ChatGPT provided a PyTorch hyperparameter tuning script that compared five CNN configurations by varying the learning rate, batch size, and dropout while keeping the network architecture unchanged. The script trained each configuration, recorded validation accuracy, saved the best-performing model, and generated a comparison plot.
 
-**Changes Made:** Created `src/hyperparameter_tuning.py` and compared the baseline configuration with a lower learning rate, smaller batch size, and higher dropout. Batch size 16 achieved the highest validation accuracy of 80.92% at epoch 8. The results were saved in `tuning_results.json`, and a comparison plot was generated.
+**Changes Made:** Updated `src/hyperparameter_tuning.py` to evaluate three learning rates (0.001, 0.0005, and 0.0001), two batch sizes (32 and 16), and two dropout values (0.30 and 0.50). The configuration using a learning rate of 0.001, batch size of 16, and dropout of 0.30 achieved the highest validation accuracy of **81.58%**. The tuning results and comparison plot were saved for later evaluation.
 
 ## Entry 22
 
@@ -294,7 +294,7 @@
 
 **Response Synopsis:** ChatGPT provided a PyTorch evaluation script that loaded the best tuned CNN model, evaluated it on the test dataset, calculated overall and per-class metrics, and saved the evaluation results and confusion matrix.
 
-**Changes Made:** Created `src/evaluate_tuned_cnn.py`. The tuned CNN achieved 77.12% test accuracy, 73.92% macro precision, 74.39% macro recall, and 73.52% macro F1-score on 153 test images. The evaluation results were saved in `tuned_cnn_evaluation.json`, and the confusion matrix was saved as `tuned_cnn_confusion_matrix.png`.
+**Changes Made:** Created `src/evaluate_tuned_cnn.py` to evaluate both the baseline CNN and the optimized CNN on the untouched test dataset. The optimized CNN achieved **85.62%** accuracy, **83.59%** macro precision, **83.99%** macro recall, and **82.83%** macro F1-score. The script generated classification reports, confusion matrices, comparison plots, and saved the evaluation results in JSON format.
 
 ## Entry 23
 
@@ -304,6 +304,6 @@
 
 **Prompt:** "Review my Homework 3 repository and AI log to make sure the project is ready for submission and that the documentation matches the completed implementation."
 
-**Response Synopsis:** ChatGPT reviewed the project structure, implementation, Git history, AI log, and generated outputs to verify that all Homework 3 requirements had been completed and that the documentation was consistent with the final repository.
+**Response Synopsis:** ChatGPT reviewed the Homework 3 repository, compared the implementation with the assignment requirements, verified the generated outputs, and identified documentation updates needed to keep the README and AI log consistent with the completed project.
 
-**Changes Made:** Reviewed the repository, updated documentation where necessary, improved code comments for readability, and completed the final submission preparation.
+**Changes Made:** Updated the README to include the final hyperparameter tuning experiments, baseline versus optimized CNN comparison, final evaluation metrics, additional plots, and revised project conclusions. Updated the AI log to reflect the completed Homework 3 implementation and prepared the repository for final submission.
