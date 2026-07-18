@@ -12,7 +12,7 @@ from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 
 
-# # Values used throughout the script
+# Values used throughout the script
 SEED = 42
 IMAGE_SIZE = 128
 EPOCHS = 10
